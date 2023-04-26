@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Report - Exterior Cleaners App</title>
+</head>
+<body>
+    <h1>Customer Report</h1>
+    <h2>{{ customer.name }}</h2>
+    <p>Address: {{ customer.address }}</p>
+    <p>Roof area: {{ customer.roof_area }} square meters</p>
+    <p>Tile type: {{ customer.tile_type }}</p>
+    <p>Cleaning method: {{ customer.cleaning_method }}</p>
+    <p>Treatment type: {{ customer.treatment_type }}</p>
+    <p>Drainage type: {{ customer.drainage_type }}</p>
+    <p>Estimated date of cleaning: {{ customer.estimated_date }}</p>
+    <p>Other information specific to the business:</p>
+    <ul>
+        <li>Insurances: {{ customer.insurances }}</li>
+        <li>Qualifications: {{ customer.qualifications }}</li>
+        <li>Images: {{ customer.images }}</li>
+    </ul>
+</body>
+</html>

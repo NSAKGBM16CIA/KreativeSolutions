@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1 class="text-center my-5">Dashboard</h1>
+
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="mb-0">My Quotes</h5>
+        </div>
+        <div class="card-body">
+          {% if quotes %}
+            <ul class="list-group">
+              {% for quote in quotes %}
+                <li class="list-group-item">
+                  <a href="{{ url_for('quote', quote_id=quote.id) }}">{{ quote.property_address }}</a>
+                  <span class="badge badge-pill badge-secondary">{{ quote.status }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p>No quotes found.</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="mb-0">My Orders</h5>
+        </div>
+        <div class="card-body">
+          {% if orders %}
+            <ul class="list-group">
+              {% for order in orders %}
+                <li class="list-group-item">
+                  <a href="{{ url_for('order', order_id=order.id) }}">{{ order.property_address }}</a>
+                  <span class="badge badge-pill badge-secondary">{{ order.status }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p>No orders found.</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

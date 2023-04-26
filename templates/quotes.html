@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quotes - Exterior Cleaners App</title>
+</head>
+<body>
+    <h1>Your Quotes</h1>
+    <ul>
+        {% for quote in user.quotes %}
+        <li>
+            Property: {{ quote.property }}<br>
+            Address: {{ quote.address }}<br>
+            Roof Area: {{ quote.roof_area }}<br>
+            Roof Pitch: {{ quote.roof_pitch }}<br>
+            Price per Square Meter: {{ quote.price_per_sqm }}<br>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
